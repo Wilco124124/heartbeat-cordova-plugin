@@ -1,4 +1,4 @@
-package com.vgc.cordova.plugins.heartbeat;
+package com.wilco124124.cordova.plugins.heartbeat;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;

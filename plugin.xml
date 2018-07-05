@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.vgc.cordova.plugins.heartbeat"
+        id="com.wilco124124.cordova.plugins.heartbeat"
         version="0.2.2">
 
   <name>HeartBeat</name>
   <description>Cordova Heart Beat Monitor</description>
   <keywords>cordova,heart,beat,rate,bpm</keywords>
-  <repo>https://github.com/vgctotero/heartbeat-cordova-plugin</repo>
+  <repo>https://github.com/Wilco124124/heartbeat-cordova-plugin</repo>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
@@ -22,23 +22,23 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="HeartBeat">
-        <param name="android-package" value="com.vgc.cordova.plugins.heartbeat.HeartBeatPlugin"/>
+        <param name="android-package" value="com.wilco124124.cordova.plugins.heartbeat.HeartBeatPlugin"/>
       </feature>
     </config-file>
 
     <framework src="com.android.support:support-annotations:24.1.1" />
-    
-    <source-file src="src/android/HeartBeatPlugin.java" target-dir="src/com/vgc/cordova/plugins/heartbeat/"/>
-     <source-file src="src/android/HeartBeatDetection.java" target-dir="src/com/vgc/cordova/plugins/heartbeat/"/>
-    <source-file src="src/android/CameraActivity.java" target-dir="src/com/vgc/cordova/plugins/heartbeat/"/>
-    <source-file src="src/android/ForegroundCameraPreview.java" target-dir="src/com/vgc/cordova/plugins/heartbeat/"/>
+
+    <source-file src="src/android/HeartBeatPlugin.java" target-dir="src/com/wilco124124/cordova/plugins/heartbeat/"/>
+     <source-file src="src/android/HeartBeatDetection.java" target-dir="src/com/wilco124124/cordova/plugins/heartbeat/"/>
+    <source-file src="src/android/CameraActivity.java" target-dir="src/com/wilco124124/cordova/plugins/heartbeat/"/>
+    <source-file src="src/android/ForegroundCameraPreview.java" target-dir="src/com/wilco124124/cordova/plugins/heartbeat/"/>
     <source-file src="src/android/foregroundcamera.xml" target-dir="res/layout"/>
 
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity 
-          android:label="HeartBeat" 
-          android:name="com.vgc.cordova.plugins.heartbeat.CameraActivity"
-          android:configChanges="keyboardHidden" 
+      <activity
+          android:label="HeartBeat"
+          android:name="com.wilco124124.cordova.plugins.heartbeat.CameraActivity"
+          android:configChanges="keyboardHidden"
           android:exported="false"
           android:theme="@android:style/Theme.Translucent.NoTitleBar">
       </activity>
@@ -56,7 +56,7 @@
   </platform>
 
   <platform name="ios">
-    
+
     <config-file target="config.xml" parent="/widget">
       <feature name="HeartBeat">
         <param name="ios-package" value="CDVHeartBeat" />

@@ -11,7 +11,7 @@ The plugin opens device's camera and turn on the lightflash next  you must to pu
 Install
 -------
 
-	cordova plugin add https://github.com/vgctotero/heartbeat-cordova-plugin
+	cordova plugin add https://github.com/Wilco124124/heartbeat-cordova-plugin
 
 Methods
 -------
@@ -45,7 +45,7 @@ Use it with ngCordova
 ------------------
 
 	app.controller('HeartBeatController', function ($cordovaHeartBeat) {
-        
+
         var props = {
             seconds: 10,
             fps: 30
@@ -58,7 +58,7 @@ Use it with ngCordova
                 console.log("Has not posible measure your heart beat");
             }
         );
-        
+
     });
 
 Properties
