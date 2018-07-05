@@ -121,13 +121,19 @@ public class CameraActivity extends CordovaActivity {
 			index++;
 		}
 		Camera camera;
-		if (index < numCameras) {
-			Log.i(TAG, "Opening camera #" + index);
-			camera = Camera.open(index);
-		} else {
-			Log.i(TAG, "No camera facing back; returning camera #0");
-			camera = Camera.open(0);
-		}
+		try {
+			if (index < numCameras) {
+				Log.i(TAG, "Opening camera #" + index);
+				camera = Camera.open(index);
+			} else {
+				Log.i(TAG, "No camera facing back; returning camera #0");
+				camera = Camera.open(0);
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "Error while interfacing Camera");
+			e.printStackTrace();
+			camera = null;
+ 		}
 		return camera;
 	}
 
