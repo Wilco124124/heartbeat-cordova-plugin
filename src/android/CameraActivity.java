@@ -35,8 +35,7 @@ public class CameraActivity extends CordovaActivity {
 		seconds = getIntent().getExtras().getInt(HeartBeatPlugin.SECONDS_KEY);
 		fps = getIntent().getExtras().getInt(HeartBeatPlugin.FPS_KEY);
 
-		setContentView(getResources().getIdentifier("foregroundcamera",
-				"layout", getPackageName()));
+		setContentView(getResources().getIdentifier("foregroundcamera", "layout", getPackageName()));
 
 		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
 			initCamera();
@@ -53,8 +52,7 @@ public class CameraActivity extends CordovaActivity {
 			Camera.Parameters params = camera.getParameters();
 			params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
 			params.setPreviewFpsRange(fps * 1000, fps * 1000);
-			Size size = params.getSupportedPreviewSizes().get(
-					params.getSupportedPreviewSizes().size() - 1);
+			Size size = params.getSupportedPreviewSizes().get(params.getSupportedPreviewSizes().size() - 1);
 			params.setPreviewSize(size.width, size.height);
 			params.setPreviewFormat(ImageFormat.NV21);
 			camera.setParameters(params);
@@ -66,8 +64,7 @@ public class CameraActivity extends CordovaActivity {
 			return;
 		}
 
-		LinearLayout layout = (LinearLayout) findViewById(getResources()
-				.getIdentifier("camera_preview", "id", getPackageName()));
+		LinearLayout layout = (LinearLayout) findViewById(getResources().getIdentifier("camera_preview", "id", getPackageName()));
 		int width = camera.getParameters().getPreviewSize().width;
 		int height = camera.getParameters().getPreviewSize().height;
 		buffer = new byte[getBufferSize(width, height)];
@@ -76,8 +73,7 @@ public class CameraActivity extends CordovaActivity {
 
 		detection = new HeartBeatDetection(camera);
 		preview = new ForegroundCameraPreview(this, camera);
-		ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
-				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		layout.addView(preview, layoutParams);
 	}
 

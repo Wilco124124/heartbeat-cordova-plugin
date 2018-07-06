@@ -174,7 +174,7 @@ public class HeartBeatDetection {
 				count = 3;
 			}
 		}
-		peakList.set(0, peakList.get(0) + count + 2);		
+		peakList.set(0, peakList.get(0) + count + 2);
 		Collections.sort(peakList);
 		return peakList.get(peakList.size() * 2 / 3);
 	}
